@@ -305,6 +305,13 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
     group system radio
     writepid /dev/cpuset/system-background/tasks
 
+# b/68982314
+on property:proc.uidcpupower=*
+   write /proc/uid_cpupower/enable 1
+
+on property:proc.uidcpupower=0
+   write /proc/uid_cpupower/enable 0
+
 service vendor.netmgrd /vendor/bin/netmgrd
     class main
     writepid /dev/cpuset/system-background/tasks
