@@ -45,4 +45,4 @@
 /(vendor|system/vendor)/bin/mlipayd             u:object_r:hal_mlipay_default_exec:s0
 
 # USB HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.xiaomi_msm8998      u:object_r:hal_usb_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.xiaomi_msm8998      u:object_r:hal_usb_impl_exec:s0
