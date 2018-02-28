@@ -155,6 +155,9 @@ MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := sdfat
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
