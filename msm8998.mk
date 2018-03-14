@@ -142,7 +142,12 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     liboverlay \
     libqdMetaData.system \
-    libtinyxml
+    libtinyxml \
+    libdisplayconfig \
+    libnl
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl:64 \
