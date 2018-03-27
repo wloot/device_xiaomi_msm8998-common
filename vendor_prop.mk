@@ -82,7 +82,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.latch_unsignaled=1 \
 	ro.opengles.version=196610 \
 	ro.sf.lcd_density=480 \
-	vendor.display.enable_default_color_mode=0
+	vendor.display.enable_default_color_mode=0 \
+	sdm.debug.rotator_downscale=1
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
