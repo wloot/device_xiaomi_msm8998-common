@@ -352,6 +352,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# WFD
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 # Wifi
 PRODUCT_PACKAGES += \
     ipacm \
