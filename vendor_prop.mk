@@ -91,6 +91,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.frp.pst=/dev/block/platform/soc/1da4000.ufshc/by-name/frp
 
+# Force hal1 for some packages
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera.hal1.packagelist=com.android.camera,com.whatsapp,com.skype.raider,com.google.android.talk
+
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.dbg.volte_avail_ovr=1 \
