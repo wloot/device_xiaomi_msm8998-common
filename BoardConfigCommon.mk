@@ -235,5 +235,8 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+#Enable DRM plugins 64 bit compilation
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Inherit from proprietary files
 include vendor/xiaomi/msm8998-common/BoardConfigVendor.mk
