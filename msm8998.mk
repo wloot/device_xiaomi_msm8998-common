@@ -190,6 +190,7 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service \
     chargeonlymode
 
@@ -340,8 +341,8 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+    android.hardware.vibrator@1.2-impl \
+    android.hardware.vibrator@1.2-service
 
 # VNDK
 PRODUCT_PACKAGES += \
