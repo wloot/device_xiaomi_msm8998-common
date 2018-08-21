@@ -182,3 +182,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wlan
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0
+
+# OEM Unlock reporting
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.oem_unlock_supported=1
+
+# Do not drop packets based upon enqueue sequence
+# to avoid freeze
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.ims.dropset_feature=0
+
+# Enable CameraHAL perfd usage
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.perfd.enable=false
+
+# Add an extra 10% saturation to display colors
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.sf.color_saturation=1.1
