@@ -24,7 +24,6 @@ import android.nfc.Tag;
 import android.os.UserHandle;
 import android.annotation.Nullable;
 import android.security.Credentials;
-import android.security.GateKeeper;
 import android.security.KeyPairGeneratorSpec;
 import android.security.KeyStore;
 import android.security.keymaster.KeyCharacteristics;
@@ -213,8 +212,7 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
                 // not set up).
                 KeymasterUtils.addUserAuthArgs(new KeymasterArguments(),
                                 mSpec.isUserAuthenticationRequired(),
-                                mSpec.getUserAuthenticationValidityDurationSeconds(), false, true,
-                                GateKeeper.INVALID_SECURE_USER_ID);
+                                mSpec.getUserAuthenticationValidityDurationSeconds(), false, true);
             } catch (IllegalArgumentException | IllegalStateException e) {
                 throw new InvalidAlgorithmParameterException(e);
             }
@@ -323,8 +321,7 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
 
         KeymasterUtils.addUserAuthArgs(args,
                         mSpec.isUserAuthenticationRequired(),
-                        mSpec.getUserAuthenticationValidityDurationSeconds(), false, true,
-                        GateKeeper.INVALID_SECURE_USER_ID);
+                        mSpec.getUserAuthenticationValidityDurationSeconds(), false, true);
         if(mSpec.getKeyValidityStart() != null) {
             args.addDate(KeymasterDefs.KM_TAG_ACTIVE_DATETIME, mSpec.getKeyValidityStart());
         }
