@@ -105,6 +105,7 @@ static inline uint32_t getScaledBrightness(const LightState& state, uint32_t max
 
 static void handleBacklight(const LightState& state) {
     uint32_t brightness = getScaledBrightness(state, MAX_LCD_BRIGHTNESS);
+    if (brightness == 16) brightness = 6;
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
