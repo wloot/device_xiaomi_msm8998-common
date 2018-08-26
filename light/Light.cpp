@@ -37,7 +37,8 @@
 #define RAMP_STEP_MS    "ramp_step_ms"
 #define START_IDX       "start_idx"
 
-#define MAX_LED_BRIGHTNESS    64
+#define MAX_WHITE_LED_BRIGHTNESS    255
+#define MAX_BUTTON_LED_BRIGHTNESS    64
 #define MAX_LCD_BRIGHTNESS    4095
 
 /*
@@ -93,7 +94,7 @@ static void handleBacklight(const LightState& state) {
 }
 
 static void handleButtons(const LightState& state) {
-    uint32_t brightness = getScaledBrightness(state, MAX_LED_BRIGHTNESS);
+    uint32_t brightness = getScaledBrightness(state, MAX_BUTTON_LED_BRIGHTNESS);
     set(BUTTON_LED BRIGHTNESS, brightness);
     set(BUTTON1_LED BRIGHTNESS, brightness);
 }
@@ -114,7 +115,7 @@ static std::string getScaledRamp(uint32_t brightness) {
 }
 
 static void handleNotification(const LightState& state) {
-    uint32_t whiteBrightness = getScaledBrightness(state, MAX_LED_BRIGHTNESS);
+    uint32_t whiteBrightness = getScaledBrightness(state, MAX_WHITE_LED_BRIGHTNESS);
 
     /* Disable blinking */
     set(WHITE_LED BLINK, 0);
