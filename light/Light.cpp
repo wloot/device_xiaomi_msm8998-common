@@ -16,7 +16,7 @@
 
 #define LOG_TAG "LightService"
 
-#include <log/log.h>
+#include <android-base/logging.h>
 
 #include "Light.h"
 
@@ -61,7 +61,7 @@ static void set(std::string path, std::string value) {
     std::ofstream file(path);
 
     if (!file.is_open()) {
-        ALOGW("failed to write %s to %s", value.c_str(), path.c_str());
+        LOG(WARNING) << "failed to write " << value.c_str() << " to " << path.c_str();
         return;
     }
 
@@ -72,27 +72,11 @@ static void set(std::string path, int value) {
     set(path, std::to_string(value));
 }
 
-static uint32_t getBrightness(const LightState& state) {
-    uint32_t alpha, red, green, blue;
-
-    /*
-     * Extract brightness from AARRGGBB.
-     */
-    alpha = (state.color >> 24) & 0xFF;
-    red = (state.color >> 16) & 0xFF;
-    green = (state.color >> 8) & 0xFF;
-    blue = state.color & 0xFF;
-
-    /*
-     * Scale RGB brightness if Alpha brightness is not 0xFF.
-     */
-    if (alpha != 0xFF) {
-        red = red * alpha / 0xFF;
-        green = green * alpha / 0xFF;
-        blue = blue * alpha / 0xFF;
-    }
-
-    return (77 * red + 150 * green + 29 * blue) >> 8;
+static uint32_t rgbToBrightness(const LightState& state) {
+    uint32_t color = state.color & 0x00ffffff;
+    return ((77 * ((color >> 16) & 0x00ff))
+            + (150 * ((color >> 8) & 0x00ff))
+            + (29 * (color & 0x00ff))) >> 8;
 }
 
 static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightness) {
@@ -100,7 +84,7 @@ static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightne
 }
 
 static inline uint32_t getScaledBrightness(const LightState& state, uint32_t maxBrightness) {
-    return scaleBrightness(getBrightness(state), maxBrightness);
+    return scaleBrightness(rgbToBrightness(state), maxBrightness);
 }
 
 static void handleBacklight(const LightState& state) {

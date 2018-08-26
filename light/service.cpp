@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 #define LOG_TAG "android.hardware.light@2.0-service.xiaomi_msm8998"
 
+#include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "Light.h"
@@ -37,14 +38,14 @@ int main() {
 
     status_t status = service->registerAsService();
     if (status != OK) {
-        ALOGE("Cannot register Light HAL service.");
+        LOG(ERROR) << "Cannot register Light HAL service.";
         return 1;
     }
 
-    ALOGI("Light HAL service ready.");
+    LOG(INFO) << "Light HAL service ready.";
 
     joinRpcThreadpool();
 
-    ALOGI("Light HAL service failed to join thread pool.");
+    LOG(ERROR) << "Light HAL service failed to join thread pool.";
     return 1;
 }
