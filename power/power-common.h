@@ -38,9 +38,9 @@
 #define INTERACTIVE_GOVERNOR "interactive"
 #define SCHEDUTIL_GOVERNOR "schedutil"
 #define SCHED_GOVERNOR "sched"
+#define PWRUTILX_GOVERNOR "pwrutilx"
 
 #define MSMDCVS_GOVERNOR "msm-dcvs"
-#define SCHED_GOVERNOR "sched"
 
 #define HINT_HANDLED (0)
 #define HINT_NONE (-1)
