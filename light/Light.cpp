@@ -16,7 +16,7 @@
 
 #define LOG_TAG "LightService"
 
-#include <android-base/logging.h>
+#include <log/log.h>
 
 #include "Light.h"
 
@@ -62,7 +62,7 @@ static void set(std::string path, std::string value) {
     std::ofstream file(path);
 
     if (!file.is_open()) {
-        LOG(WARNING) << "failed to write " << value.c_str() << " to " << path.c_str();
+        ALOGW("failed to write %s to %s", value.c_str(), path.c_str());
         return;
     }
 
