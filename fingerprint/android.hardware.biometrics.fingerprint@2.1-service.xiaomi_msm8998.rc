@@ -9,3 +9,6 @@ on post-fs-data
     chmod 0600 /data/misc/fpc/calibration_image.pndat
     mkdir /data/misc/goodix 0770 system system
     mkdir /persist/fpc 0770 system system
+
+on boot
+   chown system system /sys/devices/soc/soc:fingerprint_fpc/fingerdown_wait
