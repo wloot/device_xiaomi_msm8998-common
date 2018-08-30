@@ -60,7 +60,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-	camera.shutter_sound.blacklist=com.android.camera \
 	persist.camera.HAL3.enabled=1 \
 	persist.camera.set.afd=4 \
 	persist.camera.xm.green.b=0.96 \
