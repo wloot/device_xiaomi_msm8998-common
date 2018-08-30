@@ -32,12 +32,12 @@
 
 <Powerhint>
     <Hint type="0x0F00"> <!--sustained performance-->
-        <Resource opcode="0x4280C000" value="0xB4"/>    <!-- GPU - min freq 180 Mhz -->
-        <Resource opcode="0x42810000" value="0x156"/>   <!-- GPU - max freq 342 Mhz -->
+        <Resource opcode="0x4280C000" value="0xAB"/>    <!-- GPU - min freq 171 Mhz -->
+        <Resource opcode="0x42810000" value="0x166"/>   <!-- GPU - max freq 358 Mhz -->
         <Resource opcode="0x42814000" value="0x0"/>     <!-- GPUBW freq uncapped -->
     </Hint>
     <Hint type="0x1A00"> <!--interaction-->
-        <Resource opcode="0x42C18000" value="0x14"/>      <!-- Top App schedtune boost to 20 -->
+        <Resource opcode="0x42C18000" value="0xA"/>      <!-- Top App schedtune boost to 10 -->
         <Resource opcode="0x4180C000" value="0x0"/>       <!-- CPUBW disable hysteresis -->
     </Hint>
     <Hint type="0x1B00"> <!--boost-->
