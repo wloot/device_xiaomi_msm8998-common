@@ -238,5 +238,8 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 #Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
 
+#Light
+TARGET_PROVIDES_LIBLIGHT : true
+
 # Inherit from proprietary files
 include vendor/xiaomi/msm8998-common/BoardConfigVendor.mk
