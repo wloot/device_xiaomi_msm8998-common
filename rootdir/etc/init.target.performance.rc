@@ -22,8 +22,8 @@ on init
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
 
     # Set min freqs
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 175000
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 175000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 300000
 
     # Configure governor settings for little cluster
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
