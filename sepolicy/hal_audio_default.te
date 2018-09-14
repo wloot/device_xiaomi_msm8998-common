@@ -1,1 +1,2 @@
-unix_socket_connect(hal_audio_default, perfd, perfd)
+dontaudit hal_audio_default perfd:unix_stream_socket connectto;
+dontaudit hal_audio_default perfd_socket:sock_file write;

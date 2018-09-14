@@ -1,1 +1,2 @@
-unix_socket_connect(mediacodec, perfd, perfd)
+dontaudit mediacodec perfd:unix_stream_socket connectto;
+dontaudit mediacodec perfd_socket:sock_file write;
