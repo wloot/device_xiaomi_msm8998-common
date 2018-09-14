@@ -6,11 +6,10 @@ allow hal_fingerprint_default fingerprint_sysfs:dir r_dir_perms;
 allow hal_fingerprint_default fingerprint_sysfs:file rw_file_perms;
 
 typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;
-allow hal_fingerprint_default fingerprint_data_file:dir rw_dir_perms;
-allow hal_fingerprint_default fingerprint_data_file:file create_file_perms;
-
-allow hal_fingerprint_default fingerprint_core_data_file:dir rw_dir_perms;
-allow hal_fingerprint_default fingerprint_core_data_file:file create_file_perms;
+# access to /data/system/users/[0-9]+/fpdata
+# See file_contexts (Dont want to add one more shit in file.tee)
+allow hal_fingerprint_default fingerprintd_data_file:dir rw_dir_perms;
+allow hal_fingerprint_default fingerprintd_data_file:file create_file_perms;
 
 allow hal_fingerprint_default fingerprint_persist_file:file r_file_perms;
 
