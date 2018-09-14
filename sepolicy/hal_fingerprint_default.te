@@ -29,3 +29,6 @@ set_prop(hal_fingerprint_default, fingerprint_prop);
 
 allow hal_fingerprint_default perfd:unix_stream_socket connectto;
 allow hal_fingerprint_default perfd_socket:sock_file write;
+
+# Ignore all logging requests
+dontaudit hal_fingerprint_default storage_file:dir search;
