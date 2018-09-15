@@ -56,8 +56,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-	qcom.bluetooth.soc=cherokee \
-	ro.bluetooth.hfp.ver=1.6
+	qcom.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
