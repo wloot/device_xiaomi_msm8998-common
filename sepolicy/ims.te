@@ -1,0 +1,4 @@
+hwbinder_use(ims)
+allow ims hal_cne_hwservice:hwservice_manager find;
+binder_call(ims, cnd)
+
