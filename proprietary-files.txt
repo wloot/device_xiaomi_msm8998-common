@@ -570,8 +570,9 @@ vendor/lib64/sensors.ssc.so
 # Thermal
 vendor/bin/msm_irqbalance|7ce3f35f7e0f12af1e2d36aa095d56a5ec88c51e
 vendor/bin/thermal-engine
-vendor/etc/thermal-engine-8998-high.conf
-vendor/etc/thermal-engine-8998-map.conf
+vendor/etc/thermal-engine-8998-high.conf|be80e0bcee7f786b6810af6ef0ccc770cdbf2035
+vendor/etc/thermal-engine-8998-map.conf|d5c4e3a61aaa5a362a893d5c18e07b85ba938e13
+vendor/etc/thermal-engine-8998-nolimits.conf|af7b7bd936a6ce37e9bd621c8e8f124d1aa052e2
 vendor/etc/thermal-engine.conf
 vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
