@@ -2,3 +2,9 @@ binder_call(system_app, wificond);
 
 dontaudit system_app installd_service:service_manager find;
 dontaudit system_app netd_service:service_manager find;
+
+# XiaomiParts
+allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_vibrator:dir search;
+allow system_app sysfs_sectouch:dir search;
+allow system_app sysfs_sectouch:file rw_file_perms;
