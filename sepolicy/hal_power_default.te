@@ -13,5 +13,9 @@ allow hal_power_default system_stats:file r_file_perms;
 r_dir_file(hal_power_default, sysfs_devfreq)
 allow hal_power_default sysfs_devfreq:file rw_file_perms;
 
+allow hal_power_default sysfs_kgsl:lnk_file rw_file_perms;
+
 allow hal_power_default sysfs_kgsl:dir search;
 allow hal_power_default sysfs_kgsl:file rw_file_perms;
+
+set_prop(hal_power_default, power_prop)

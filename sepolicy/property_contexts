@@ -27,3 +27,7 @@ sys.listeners.registered                                      u:object_r:vendor_
 # Thermal engine
 persist.sys.thermal.                                          u:object_r:thermal_prop:s0
 sys.thermal.                                                  u:object_r:thermal_prop:s0
+
+# Power
+vendor.powerhal.state      u:object_r:power_prop:s0
+vendor.powerhal.audio      u:object_r:power_prop:s0
