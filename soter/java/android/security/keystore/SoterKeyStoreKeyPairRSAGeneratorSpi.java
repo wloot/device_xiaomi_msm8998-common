@@ -27,6 +27,7 @@ import android.security.Credentials;
 import android.security.GateKeeper;
 import android.security.KeyPairGeneratorSpec;
 import android.security.KeyStore;
+import android.security.KeyStoreException;
 import android.security.keymaster.KeyCharacteristics;
 import android.security.keymaster.KeymasterArguments;
 import android.security.keymaster.KeymasterDefs;
@@ -211,10 +212,7 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
                 // Check that user authentication related parameters are acceptable. This method
                 // will throw an IllegalStateException if there are issues (e.g., secure lock screen
                 // not set up).
-                KeymasterUtils.addUserAuthArgs(new KeymasterArguments(),
-                                mSpec.isUserAuthenticationRequired(),
-                                mSpec.getUserAuthenticationValidityDurationSeconds(), false, true,
-                                GateKeeper.INVALID_SECURE_USER_ID);
+               KeymasterUtils.addUserAuthArgs(new KeymasterArguments(), mSpec);
             } catch (IllegalArgumentException | IllegalStateException e) {
                 throw new InvalidAlgorithmParameterException(e);
             }
@@ -304,7 +302,7 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
             throw new IllegalStateException("Not initialized");
         }
 
-        final int flags = (mEncryptionAtRestRequired) ? KeyStore.FLAG_ENCRYPTED : 0;
+        int flags = (mEncryptionAtRestRequired) ? KeyStore.FLAG_ENCRYPTED : 0;
         if (((flags & KeyStore.FLAG_ENCRYPTED) != 0)
             && (mKeyStore.state() != KeyStore.State.UNLOCKED)) {
             throw new IllegalStateException(
@@ -321,10 +319,7 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
         args.addEnums(KeymasterDefs.KM_TAG_PADDING, mKeymasterSignaturePaddings);
         args.addEnums(KeymasterDefs.KM_TAG_DIGEST, mKeymasterDigests);
 
-        KeymasterUtils.addUserAuthArgs(args,
-                        mSpec.isUserAuthenticationRequired(),
-                        mSpec.getUserAuthenticationValidityDurationSeconds(), false, true,
-                        GateKeeper.INVALID_SECURE_USER_ID);
+        KeymasterUtils.addUserAuthArgs(args, mSpec);
         if(mSpec.getKeyValidityStart() != null) {
             args.addDate(KeymasterDefs.KM_TAG_ACTIVE_DATETIME, mSpec.getKeyValidityStart());
         }
@@ -335,8 +330,12 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
         if(mSpec.getKeyValidityForConsumptionEnd() != null) {
             args.addDate(KeymasterDefs.KM_TAG_USAGE_EXPIRE_DATETIME,
                          mSpec.getKeyValidityForConsumptionEnd());
-        }
+        }        
         addAlgorithmSpecificParameters(args);
+
+        if (mSpec.isStrongBoxBacked()) {
+            flags |= KeyStore.FLAG_STRONGBOX;
+        }
 
         byte[] additionalEntropy =
         getRandomBytesToMixIntoKeystoreRng(
@@ -354,8 +353,12 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
                                                   flags,
                                                   resultingKeyCharacteristics);
             if (errorCode != KeyStore.NO_ERROR) {
+            if (errorCode == KeyStore.HARDWARE_TYPE_UNAVAILABLE) {
+                throw new StrongBoxUnavailableException("Failed to generate key pair");
+            } else {
                 throw new ProviderException(
-                                            "Failed to generate key pair", KeyStore.getKeyStoreException(errorCode));
+                        "Failed to generate key pair", KeyStore.getKeyStoreException(errorCode));
+            }
             }
 
             KeyPair result;
@@ -397,6 +400,12 @@ public class SoterKeyStoreKeyPairRSAGeneratorSpi extends KeyPairGeneratorSpi {
 
             success = true;
             return result;
+        } catch (ProviderException e) {
+          if ((mSpec.getPurposes() & KeyProperties.PURPOSE_WRAP_KEY) != 0) {
+              throw new SecureKeyImportUnavailableException(e);
+          } else {
+              throw e;
+          }            
         } finally {
             if (!success) {
                 Credentials.deleteAllTypesForAlias(mKeyStore, mEntryAlias);
