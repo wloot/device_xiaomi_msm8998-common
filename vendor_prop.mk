@@ -185,3 +185,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wlan
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0
+
+# Early phase offset configuration for SurfaceFlinger (b/75985430)
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.early_phase_offset_ns=500000
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.early_app_phase_offset_ns=500000
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.early_gl_phase_offset_ns=3000000
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.early_gl_app_phase_offset_ns=15000000
