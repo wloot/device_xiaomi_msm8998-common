@@ -373,5 +373,12 @@ PRODUCT_PACKAGES += \
     XiaomiDoze \
     XiaomiParts
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.1-service.xiaomi_msm8998
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
+
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)

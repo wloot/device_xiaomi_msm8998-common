@@ -85,11 +85,6 @@ on late-fs
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.qcom --late
 
-on post-fs-data
-    # Create directory for thermal engine
-    mkdir /data/thermal 0771 system system
-    mkdir /data/thermal/config 0771 system system
-
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
@@ -115,14 +110,15 @@ service vendor.qseecomd /vendor/bin/qseecomd
     group root
     shutdown critical
 
-service vendor.thermal-engine /vendor/bin/thermal-engine -T
-    class main
+service vendor.thermal-engine /vendor/bin/thermal-engine
+    class hal
     user root
     socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
     group root
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.adsprpcd /vendor/bin/adsprpcd
     class main

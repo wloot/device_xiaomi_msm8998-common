@@ -20,7 +20,3 @@ type system_stats, debugfs_type, fs_type;
 
 # Remote storage
 type debugfs_rmts, debugfs_type, fs_type;
-
-# Thermal engine
-type thermal_data_file, data_file_type, file_type, core_data_file_type;
-type thermal_decrypt_file, data_file_type, file_type, core_data_file_type;
