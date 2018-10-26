@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-#include <android-base/logging.h>
+#define LOG_TAG "android.hardware.thermal@1.2-service.xiaomi_msm8998"
+
+#include <android/log.h>
 #include <hidl/HidlTransportSupport.h>
 #include "Thermal.h"
 
@@ -22,42 +24,33 @@ using android::sp;
 using android::status_t;
 using android::OK;
 
-// libhwbinder:
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-// Generated HIDL files
 using android::hardware::thermal::V1_1::IThermal;
 using android::hardware::thermal::V1_1::implementation::Thermal;
 
-int main() {
+int main(int /* argc */, char** /* argv */) {
+    ALOGI("Thermal HAL Service 1.1 is starting");
 
-    status_t status;
-    android::sp<IThermal> service = nullptr;
-
-    LOG(INFO) << "Thermal HAL Service 1.1 is starting";
-
-    service = new Thermal();
+    android::sp<IThermal> service = new Thermal();
     if (service == nullptr) {
-        LOG(ERROR) << "Can not create an instance of Thermal HAL Iface, exiting";
-
-        goto shutdown;
+        ALOGE("Could not create an instance of Thermal HAL");
+        return 1;
     }
 
-    configureRpcThreadpool(1, true /*callerWillJoin*/);
+    configureRpcThreadpool(1, true /* callerWillJoi n*/);
 
-    status = service->registerAsService();
+    status_t status = service->registerAsService();
     if (status != OK) {
-        LOG(ERROR) << "Could not register service for Thermal HAL Iface (" << status << ")";
-        goto shutdown;
+        ALOGE("Could not register Thermal HAL service");
+        return 1;
     }
 
-    LOG(INFO) << "Thermal Service is ready";
+    ALOGI("Thermal HAL service is ready");
     joinRpcThreadpool();
-    // Should not pass this line
 
-shutdown:
     // In normal operation, we don't expect the thread pool to exit
-    LOG(ERROR) << "Thermal Service is shutting down";
+    ALOGE("Thermal HAL service is shutting down");
     return 1;
 }
