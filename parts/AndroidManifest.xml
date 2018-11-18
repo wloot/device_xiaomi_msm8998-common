@@ -35,6 +35,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
+        <activity
+            android:name="org.omnirom.device.DisplayCalibration"
+            android:exported="true"
+            android:label="@string/kcal_title"
+            android:theme="@android:style/Theme.DeviceDefault.Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
         <receiver android:name="org.omnirom.device.Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

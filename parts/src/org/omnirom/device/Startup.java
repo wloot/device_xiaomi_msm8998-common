@@ -50,5 +50,8 @@ public class Startup extends BroadcastReceiver {
         restore(TapToWakeSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
+        S2SVibratorStrengthPreference.restore(context);
+        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.S2S_KEY, "0");
+        Utils.writeValue(DeviceSettings.FILE_S2S_TYPE, storedValue);
     }
 }

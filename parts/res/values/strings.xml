@@ -15,7 +15,8 @@
 -->
 <resources>
     <string name="app_name">Xiaomi</string>
-    <string name="advanced_settings">Advanced</string>
+    <string name="advanced_settings">Xiaomi</string>
+    <string name="advanced_settings_summary">Advanced</string> 
     <string name="category_system">System</string>
     <string name="vib_strength_title_head">Vibration strength</string>
     <string name="taptowake_title">Tap to wake</string>
@@ -23,4 +24,32 @@
 
     <string name="display_title">Display</string>
     <string name="device_doze_title">Ambient display</string>
+
+    <!-- camera -->
+    <string name="camera_title">Camera</string>
+    <string name="camera_hal3_title">Enable Camera2 API</string>
+
+    <!-- s2s -->
+    <string name="s2s_title">Sweep to sleep</string>
+    <string name="s2s_vib_strength_title_head">Sweep2sleep vibration</string>
+
+    <!-- Kcal -->
+    <string name="kcal_title">Display color</string>
+    <string name="kcal_summary">Display color calibration using KCAL</string>
+    <string name="kcal_enabled_title">Enable KCAL</string>
+    <string name="kcal_enabled_summary">Turn on display calibration using KCAL</string>
+    <string name="kcal_red">Red</string>
+    <string name="kcal_green">Green</string>
+    <string name="kcal_blue">Blue</string>
+    <string name="kcal_saturation">Saturation</string>
+    <string name="kcal_contrast">Constrast</string>
+    <string name="menu_reset">Reset</string>
+    <string name="kcal_color_temp">Color temperature (K)</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_profile_title">SPECTRUM Profile</string>
+    <string name="spectrum_title">SPECTRUM Profile</string>
+    <string name="spectrum_summary">Choose your power saver profile</string>
+    <string name="spectrum_dialogTitle">Choose your power saver profile</string>
+
 </resources>
