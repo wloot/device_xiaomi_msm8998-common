@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Настройки Xiaomi</string>
+    <string name="advanced_settings">Настройки Xiaomi</string>
+    <string name="advanced_settings_summary">Дополнительные настройки</string> 
+    <string name="category_system">Система</string>
+    <string name="vib_strength_title_head">Сила вибрации</string>
+
+    <string name="display_title">Экран</string>
+    <string name="device_doze_title">Автоматич. включение экрана</string>
+
+    <!-- camera -->
+    <string name="camera_title">Камера</string>
+    <string name="camera_hal3_title">Включить Camera2 API</string>
+
+    <!-- s2s -->
+    <string name="s2s_title">Жест для сна</string>
+    <string name="s2s_vib_strength_title_head">Сила вибрации жеста</string>
+
+    <!-- Kcal -->
+    <string name="kcal_title">Цвета экрана</string>
+    <string name="kcal_summary">Калибровка цветов экрана</string>
+    <string name="kcal_enabled_title">Включить калибровку</string>
+    <string name="kcal_enabled_summary">Включение калибровки цветов</string>
+    <string name="kcal_red">Красный</string>
+    <string name="kcal_green">Зелёный</string>
+    <string name="kcal_blue">Синий</string>
+    <string name="kcal_saturation">Насыщенность</string>
+    <string name="kcal_contrast">Контраст</string>
+    <string name="menu_reset">Сброс</string>
+    <string name="kcal_color_temp">Цветовая температура (K)</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_profile_title">Профили ядра</string>
+    <string name="spectrum_title">Профиль производительности</string>
+    <string name="spectrum_summary">Выберите профиль производительности ядра</string>
+    <string name="spectrum_dialogTitle">Выбор профиля ядра</string>
+</resources>
