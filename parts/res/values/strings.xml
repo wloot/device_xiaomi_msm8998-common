@@ -42,14 +42,14 @@
     <string name="kcal_green">Green</string>
     <string name="kcal_blue">Blue</string>
     <string name="kcal_saturation">Saturation</string>
-    <string name="kcal_contrast">Constrast</string>
+    <string name="kcal_contrast">Contrast</string>
     <string name="menu_reset">Reset</string>
     <string name="kcal_color_temp">Color temperature (K)</string>
 
     <!-- Spectrum Profiles -->
-    <string name="spectrum_profile_title">SPECTRUM Profile</string>
-    <string name="spectrum_title">SPECTRUM Profile</string>
-    <string name="spectrum_summary">Choose your power saver profile</string>
-    <string name="spectrum_dialogTitle">Choose your power saver profile</string>
+    <string name="spectrum_profile_title">Kernel Profiles</string>
+    <string name="spectrum_title">Kernel Profile</string>
+    <string name="spectrum_summary">Choose your kernel profile</string>
+    <string name="spectrum_dialogTitle">Choose your kernel profile</string>
 
 </resources>

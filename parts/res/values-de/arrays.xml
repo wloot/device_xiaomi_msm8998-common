@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- sweep2sleep -->
+    <string-array name="s2sArray">
+        <item>Deaktiviert</item>
+        <item>Rechts streichen</item>
+        <item>Links streichen</item>
+        <item>Links oder Rechts streifen</item>
+    </string-array>
+
+    <!-- spectrum profiles -->
+    <string-array name="spectrum_profiles">
+        <item>Ausgeglichen</item>
+        <item>Energiesparmodus</item>
+        <item>Leistungsorientiert</item>
+        <item>Spielen</item>
+    </string-array>
+
+</resources>
