@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- sweep2sleep -->
+    <string-array name="s2sArray">
+        <item>Отключено</item>
+        <item>Скольжение вправо</item>
+        <item>Скольжение влево</item>
+        <item>Вправо или лево</item>
+    </string-array>
+
+    <!-- spectrum profiles -->
+    <string-array name="spectrum_profiles">
+        <item>Сбалансированный</item>
+        <item>Экономия батареи</item>
+        <item>Производительный</item>
+        <item>Игровой</item>
+    </string-array>
+</resources>
