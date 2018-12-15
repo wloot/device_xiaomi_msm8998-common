@@ -5,6 +5,7 @@ on property:sys.boot_completed=1
    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/schedutil/*
    chmod 0644 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
    chmod 0644 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+   chmod 0644 /dev/stune/top-app/schedtune.boost
    # initial after boots
    setprop persist.spectrum.profile 0
 
@@ -13,7 +14,7 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1900800
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2457000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2457600
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 1    
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable 1
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
@@ -22,7 +23,6 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 825600
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 422400
-    chmod 0644 /dev/stune/top-app/schedtune.boost    
     write /dev/stune/top-app/schedtune.boost 9
     write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 7
     write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 1
@@ -41,9 +41,7 @@ on property:persist.spectrum.profile=1
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 0
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 499200
-    chmod 0644 /dev/stune/top-app/schedtune.boost
     write /dev/stune/top-app/schedtune.boost 20
-    chmod 0444 /dev/stune/top-app/schedtune.boost
     write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 6
     write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 1
 
@@ -61,9 +59,7 @@ on property:persist.spectrum.profile=2
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 10000
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 0
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 0
-    chmod 0644 /dev/stune/top-app/schedtune.boost
     write /dev/stune/top-app/schedtune.boost 8
-    chmod 0444 /dev/stune/top-app/schedtune.boost    
     write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 7
     write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 5
 
@@ -81,8 +77,6 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 825600
     write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 0
-    chmod 0644 /dev/stune/top-app/schedtune.boost
     write /dev/stune/top-app/schedtune.boost 10
-    chmod 0444 /dev/stune/top-app/schedtune.boost
     write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 5
     write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 1
