@@ -354,6 +354,9 @@ PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
 # WFD
+PRODUCT_PACKAGES += \
+    libnl
+
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
