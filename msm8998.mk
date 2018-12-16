@@ -315,7 +315,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    libril-wrapper \
+    android.hardware.radio.config@1.0 \
     librmnetctl
 
 # Seccomp policy
