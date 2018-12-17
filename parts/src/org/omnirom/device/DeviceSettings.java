@@ -145,7 +145,7 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         } else if (S2S_KEY.equals(key)) {
             strvalue = (String) newValue;
-            Utils.writeValue("/sys/sweep2sleep/sweep2sleep", strvalue);
+            Utils.writeValue(FILE_S2S_TYPE, strvalue);
             SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
             editor.putString(S2S_KEY, strvalue);
             editor.commit();
