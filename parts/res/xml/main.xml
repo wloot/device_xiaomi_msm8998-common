@@ -79,4 +79,13 @@
             android:title="@string/s2s_vib_strength_title_head" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="hw_buttons"
+        android:title="@string/hw_buttons_title">
+        <SwitchPreference
+            android:key="buttons_swap"
+            android:defaultValue="false"
+            android:title="@string/swap_hw_buttons_title"
+            android:summary="@string/swap_hw_buttons_summary" />
+    </PreferenceCategory>
 </PreferenceScreen>

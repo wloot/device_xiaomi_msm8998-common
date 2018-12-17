@@ -49,4 +49,9 @@
     <string name="spectrum_title">Профиль производительности</string>
     <string name="spectrum_summary">Выберите профиль производительности ядра</string>
     <string name="spectrum_dialogTitle">Выбор профиля ядра</string>
+
+    <!-- Swap HW buttons -->
+    <string name="hw_buttons_title">Аппаратные кнопки</string>
+    <string name="swap_hw_buttons_title">Поменять местами</string>
+    <string name="swap_hw_buttons_summary">Поменять местами кнопки «Обзор» и «Назад»</string>
 </resources>
