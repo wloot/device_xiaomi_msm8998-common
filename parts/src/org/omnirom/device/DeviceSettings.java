@@ -74,10 +74,13 @@ public class DeviceSettings extends PreferenceFragment implements
     private Preference mKcalPref;
     private ListPreference mSPECTRUM;
     private SwitchPreference mButtonSwap;
+    private PreferenceCategory mHWButtons;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.main, rootKey);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mKcalPref = findPreference("kcal");
         mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -97,9 +100,14 @@ public class DeviceSettings extends PreferenceFragment implements
         mS2S.setValue(Utils.getFileValue(FILE_S2S_TYPE, "0"));
         mS2S.setOnPreferenceChangeListener(this);
 
-        mButtonSwap = (SwitchPreference) findPreference(BUTTONS_SWAP_KEY);
-        mButtonSwap.setChecked(Utils.getFileValueAsBoolean(BUTTONS_SWAP_PATH, false));
-        mButtonSwap.setOnPreferenceChangeListener(this);
+        if (Utils.fileWritable(BUTTONS_SWAP_PATH)) {
+            mButtonSwap = (SwitchPreference) findPreference(BUTTONS_SWAP_KEY);
+            mButtonSwap.setChecked(Utils.getFileValueAsBoolean(BUTTONS_SWAP_PATH, false));
+            mButtonSwap.setOnPreferenceChangeListener(this);
+        } else {
+            mHWButtons = (PreferenceCategory) prefSet.findPreference("hw_buttons");
+            prefSet.removePreference(mHWButtons);
+        }
 
         mSPECTRUM = (ListPreference) findPreference(SPECTRUM_KEY);
         if( mSPECTRUM != null ) {
