@@ -52,4 +52,8 @@
     <string name="spectrum_summary">Choose your kernel profile</string>
     <string name="spectrum_dialogTitle">Choose your kernel profile</string>
 
+    <!-- Swap HW buttons -->
+    <string name="hw_buttons_title">Hardware buttons</string>
+    <string name="swap_hw_buttons_title">Swap buttons</string>
+    <string name="swap_hw_buttons_summary">Swap the order of recents and back buttons</string>
 </resources>
