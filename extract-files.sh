@@ -93,4 +93,7 @@ MINIKIN_V27="$COMMON_BLOB_ROOT"/vendor/lib/libminikin-v27.so
 patchelf --replace-needed libminikin.so libminikin-v27.so "$CAMERA_MSM8998"
 patchelf --set-soname libminikin-v27.so "$MINIKIN_V27"
 
+patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/bin/mlipayd
+patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/lib64/libmlipay.so
+
 "$MY_DIR"/setup-makefiles.sh

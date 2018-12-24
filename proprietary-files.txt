@@ -680,3 +680,9 @@ vendor/lib/libmmosal_proprietary.so|c36283ee3a72290ba6662b6ca13af8d7e323b5ec
 
 # Wi-Fi - from nitrogen PKQ1.181007.001
 vendor/bin/cnss-daemon|8c16a0601a50a89e26a48046316e906444908ce7
+
+# Mlipay
+etc/init/vendor.xiaomi.hardware.mlipay@1.0-service.rc:vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.0-service.rc
+lib64/vendor.xiaomi.hardware.mlipay@1.0.so:vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
+vendor/bin/mlipayd
+vendor/lib64/libmlipay.so
