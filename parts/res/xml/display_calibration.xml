@@ -11,6 +11,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
+
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -22,7 +23,7 @@
         android:persistent="false" />
     <org.omnirom.device.utils.SeekBarPreference
         android:key="kcal_color_temp"
-        android:title="@string/kcal_color_temp"        
+        android:title="@string/kcal_color_temp"
         android:dependency="kcal_enabled"
         android:persistent="false"
         android:layout="@layout/slider_preference"
@@ -32,7 +33,7 @@
         app:default_value="6400"/>
     <org.omnirom.device.utils.SeekBarPreference
         android:key="kcal_red"
-        android:title="@string/kcal_red"        
+        android:title="@string/kcal_red"
         android:dependency="kcal_enabled"
         android:persistent="false"
         android:layout="@layout/slider_preference"

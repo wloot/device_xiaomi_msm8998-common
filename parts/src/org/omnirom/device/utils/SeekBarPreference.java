@@ -15,6 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 package org.omnirom.device.utils;
 
 import android.content.Context;
@@ -23,10 +24,10 @@ import android.preference.Preference;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.util.AttributeSet;
-import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -74,7 +75,7 @@ public class SeekBarPreference extends Preference {
         monitorBox.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         bar.setMax(maximum - minimum);
-        bar.setProgress(currentValue - minimum);        
+        bar.setProgress(currentValue - minimum);
 
         monitorBox.setText(String.valueOf(currentValue));
         monitorBox.setOnFocusChangeListener(new View.OnFocusChangeListener() {

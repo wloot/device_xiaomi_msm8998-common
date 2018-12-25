@@ -13,10 +13,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <resources>
     <string name="app_name">高级设置</string>
     <string name="advanced_settings">其他设置</string>
-    <string name="advanced_settings_summary">色彩校准、双击唤醒、CPU 运行模式</string> 
+    <string name="advanced_settings_summary">色彩校准、双击唤醒、CPU 运行模式</string>
     <string name="taptowake_title">双击唤醒</string>
     <string name="taptowake_summary">双击屏幕上的任意位置即可唤醒设备</string>
 
@@ -52,5 +53,4 @@
     <string name="spectrum_title">CPU 运行模式</string>
     <string name="spectrum_summary">选择 CPU 运行模式</string>
     <string name="spectrum_dialogTitle">选择 CPU 运行模式</string>
-
 </resources>

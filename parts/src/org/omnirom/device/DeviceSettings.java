@@ -15,43 +15,48 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
 package org.omnirom.device;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.res.Resources;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemProperties;
+import android.provider.Settings;
 import android.support.v14.preference.PreferenceFragment;
+import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.TwoStatePreference;
-import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.util.Log;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_CATEGORY_HW_BUTTONS = "hw_buttons";
-    private static final String KEY_CATEGORY_DISPLAY = "display";
     private static final String KEY_CATEGORY_CAMERA = "camera";
+    private static final String KEY_CATEGORY_DISPLAY = "display";
+    private static final String KEY_CATEGORY_HW_BUTTONS = "hw_buttons";
+    private static final String KEY_CATEGORY_USB_FASTCHARGE = "usb_fastcharge";
+
     private static final String ENABLE_HAL3_KEY = "hal3";
     private static final String SPECTRUM_KEY = "spectrum";
+
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
+
     public static final String S2S_KEY = "sweep2sleep";
     public static final String KEY_TAPTOWAKE_SWITCH = "taptowake";
     public static final String KEY_VIBSTRENGTH = "vib_strength";
@@ -137,15 +142,11 @@ public class DeviceSettings extends PreferenceFragment implements
     }
 
     private void setEnableHAL3(boolean value) {
-        if(value) {
-            SystemProperties.set(HAL3_SYSTEM_PROPERTY, "1");
-        } else {
-            SystemProperties.set(HAL3_SYSTEM_PROPERTY, "0");
-        }
+        SystemProperties.set(HAL3_SYSTEM_PROPERTY, value ? "1" : "0");
     }
 
     private void setButtonSwap(boolean value) {
-            Utils.writeValue(BUTTONS_SWAP_PATH, value ? "1" : "0");
+        Utils.writeValue(BUTTONS_SWAP_PATH, value ? "1" : "0");
     }
 
     @Override
@@ -156,8 +157,10 @@ public class DeviceSettings extends PreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
+
         boolean value;
         String strvalue;
+
         if (ENABLE_HAL3_KEY.equals(key)) {
             value = (Boolean) newValue;
             mEnableHAL3.setChecked(value);
@@ -193,7 +196,6 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         } catch (PackageManager.NameNotFoundException e) {
         }
-
         return false;
     }
 }

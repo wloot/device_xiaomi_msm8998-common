@@ -15,6 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
 package org.omnirom.device;
 
 import android.app.Activity;
@@ -33,7 +34,7 @@ import android.view.MenuItem;
 public class DeviceSettingsActivity extends Activity {
 
     private DeviceSettings mDeviceSettingsFragment;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,5 +63,4 @@ public class DeviceSettingsActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
- 
 }

@@ -13,10 +13,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <resources>
     <string name="app_name">Настройки Xiaomi</string>
     <string name="advanced_settings">Настройки Xiaomi</string>
-    <string name="advanced_settings_summary">Дополнительные настройки</string> 
+    <string name="advanced_settings_summary">Дополнительные настройки</string>
     <string name="category_system">Система</string>
     <string name="vib_strength_title_head">Сила вибрации</string>
 
