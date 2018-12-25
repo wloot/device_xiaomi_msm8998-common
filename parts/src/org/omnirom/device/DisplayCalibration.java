@@ -15,25 +15,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
 package org.omnirom.device;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.SwitchPreference;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 
-import android.app.ActionBar;
-import org.omnirom.device.utils.SeekBarPreference;
 import org.omnirom.device.R;
+import org.omnirom.device.utils.SeekBarPreference;
 
 public class DisplayCalibration extends PreferenceActivity implements
         OnPreferenceChangeListener {

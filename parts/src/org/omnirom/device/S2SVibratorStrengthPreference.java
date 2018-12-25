@@ -15,22 +15,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
 package org.omnirom.device;
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.ContentObserver;
+import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.preference.PreferenceViewHolder;
-import android.database.ContentObserver;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.SeekBar;
-import android.widget.Button;
-import android.os.Bundle;
 import android.util.Log;
-import android.os.Vibrator;
+import android.view.View;
+import android.widget.Button;
+import android.widget.SeekBar;
 
 public class S2SVibratorStrengthPreference extends Preference implements
         SeekBar.OnSeekBarChangeListener {

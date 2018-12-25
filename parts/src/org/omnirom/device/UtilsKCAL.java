@@ -161,5 +161,4 @@ public final class UtilsKCAL {
         }
         return x;
     }
-
 }

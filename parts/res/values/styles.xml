@@ -13,6 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
 <resources>
     <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="preferenceTheme">@style/PreferenceTheme</item>
@@ -33,5 +34,4 @@
     <style name="Theme.Actionbar.Title" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
         <item name="android:textColor">#ff4285f4</item>
     </style>
-
 </resources>

@@ -14,6 +14,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
     android:background="?android:attr/selectableItemBackground"
     android:clipToPadding="false"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/icon_container"
@@ -49,14 +50,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_vertical"
-        android:layout_weight="1" >
+        android:layout_weight="1">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dip"
             android:layout_marginTop="10dip"
-            android:layout_marginBottom="6dip" >
+            android:layout_marginBottom="6dip">
 
             <TextView android:id="@android:id/title"
                 android:layout_width="wrap_content"
@@ -74,7 +75,6 @@
                 android:textColor="?android:attr/textColorSecondary"
                 android:maxLines="10"
                 android:ellipsize="end" />
-
         </RelativeLayout>
 
         <LinearLayout
@@ -93,7 +93,6 @@
                 android:layout_weight="1"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp" />
-
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

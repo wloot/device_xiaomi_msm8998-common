@@ -59,7 +59,6 @@ public final class FileUtils {
                 // Ignored, not much we can do anyway
             }
         }
-
         return line;
     }
 
@@ -89,7 +88,6 @@ public final class FileUtils {
                 // Ignored, not much we can do anyway
             }
         }
-
         return true;
     }
 

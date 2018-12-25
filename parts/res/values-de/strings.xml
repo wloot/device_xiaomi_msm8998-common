@@ -10,6 +10,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <resources>
     <string name="app_name">XiaomiParts</string>
     <string name="advanced_settings">Xiaomi</string>
@@ -44,5 +45,4 @@
     <string name="spectrum_title">Kernel Profile</string>
     <string name="spectrum_summary">Wähle dein Kernel Profil</string>
     <string name="spectrum_dialogTitle">Wähle dein Kernel Profil</string>
-
 </resources>

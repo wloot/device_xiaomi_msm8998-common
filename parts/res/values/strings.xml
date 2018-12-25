@@ -13,10 +13,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <resources>
     <string name="app_name">Xiaomi</string>
     <string name="advanced_settings">Xiaomi</string>
-    <string name="advanced_settings_summary">Advanced</string> 
+    <string name="advanced_settings_summary">Advanced</string>
     <string name="category_system">System</string>
     <string name="vib_strength_title_head">Vibration strength</string>
     <string name="taptowake_title">Tap to wake</string>

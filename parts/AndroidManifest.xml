@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.omnirom.device"
-    android:sharedUserId="android.uid.system" >
+    android:sharedUserId="android.uid.system">
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -14,11 +14,11 @@
     <application
         android:label="@string/advanced_settings"
         android:theme="@style/AppTheme"
-        android:supportsRtl="true" >
+        android:supportsRtl="true">
         <activity
             android:name="org.omnirom.device.DeviceSettingsActivity"
             android:exported="false"
-            android:label="@string/advanced_settings" >
+            android:label="@string/advanced_settings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -28,7 +28,7 @@
             android:name="org.omnirom.device.DeviceSettings"
             android:exported="true"
             android:label="@string/advanced_settings"
-            android:targetActivity="DeviceSettingsActivity" >
+            android:targetActivity="DeviceSettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
@@ -43,10 +43,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+            </intent-filter>
         </activity>
-        <receiver android:name="org.omnirom.device.Startup" >
-            <intent-filter android:priority="100" >
+        <receiver android:name="org.omnirom.device.Startup">
+            <intent-filter android:priority="100">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>

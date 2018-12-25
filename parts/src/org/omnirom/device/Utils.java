@@ -15,14 +15,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
 package org.omnirom.device;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Utils {
 
@@ -89,7 +90,7 @@ public class Utils {
     public static boolean getFileValueAsBoolean(String filename, boolean defValue) {
         String fileValue = readLine(filename);
         if(fileValue!=null){
-            return (fileValue.equals("0")?false:true);
+            return (fileValue.equals("0") ? false : true);
         }
         return defValue;
     }
