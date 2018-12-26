@@ -33,6 +33,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 
+import org.omnirom.device.R;
+import org.omnirom.device.utils.FileUtils;
+
 public class S2SVibratorStrengthPreference extends Preference implements
         SeekBar.OnSeekBarChangeListener {
 
@@ -65,15 +68,15 @@ public class S2SVibratorStrengthPreference extends Preference implements
     }
 
     public static boolean isSupported() {
-        return Utils.fileWritable(FILE_LEVEL);
+        return FileUtils.isFileWritable(FILE_LEVEL);
     }
 
     public static String getValue(Context context) {
-        return Utils.getFileValue(FILE_LEVEL, "20");
+        return FileUtils.getFileValue(FILE_LEVEL, "20");
     }
 
     private void setValue(String newValue) {
-        Utils.writeValue(FILE_LEVEL, newValue);
+        FileUtils.writeValue(FILE_LEVEL, newValue);
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
         editor.putString(DeviceSettings.KEY_S2S_VIBSTRENGTH, newValue);
         editor.commit();
@@ -85,7 +88,7 @@ public class S2SVibratorStrengthPreference extends Preference implements
         }
 
         String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_S2S_VIBSTRENGTH, "20");
-        Utils.writeValue(FILE_LEVEL, storedValue);
+        FileUtils.writeValue(FILE_LEVEL, storedValue);
     }
 
     public void onProgressChanged(SeekBar seekBar, int progress,
