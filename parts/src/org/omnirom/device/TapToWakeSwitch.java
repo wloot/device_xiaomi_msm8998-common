@@ -23,29 +23,33 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceManager;
 
+import org.omnirom.device.R;
+import org.omnirom.device.utils.FileUtils;
+
+
 public class TapToWakeSwitch implements OnPreferenceChangeListener {
 
     private static final String FILE = "/proc/touchpanel/double_tap_enable";
 
     public static String getFile() {
-        if (Utils.fileWritable(FILE)) {
+        if (FileUtils.isFileWritable(FILE)) {
             return FILE;
         }
         return null;
     }
 
     public static boolean isSupported() {
-        return Utils.fileWritable(getFile());
+        return FileUtils.isFileWritable(getFile());
     }
 
     public static boolean isCurrentlyEnabled(Context context) {
-        return Utils.getFileValueAsBoolean(getFile(), false);
+        return FileUtils.getFileValueAsBoolean(getFile(), false);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
-        Utils.writeValue(getFile(), enabled ? "1" : "0");
+        FileUtils.writeValue(getFile(), enabled ? "1" : "0");
         return true;
     }
 }
