@@ -84,6 +84,9 @@ public final class FileUtils {
      * @return true on success, false on failure
      */
     public static boolean writeValue(String fileName, String value) {
+        if (fileName == null) {
+            return false;
+        }    
         BufferedWriter writer = null;
 
         try {
@@ -105,6 +108,10 @@ public final class FileUtils {
             }
         }
         return true;
+    }
+
+    public static boolean writeValue(String fileName, boolean enabled) {
+        return writeValue(fileName, enabled ? "1" : "0");
     }
 
     /**

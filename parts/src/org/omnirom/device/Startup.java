@@ -30,34 +30,21 @@ import org.omnirom.device.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
 
-    private void restore(String file, boolean enabled) {
-        if (file == null) {
-            return;
-        }
-        if (enabled) {
-            FileUtils.writeValue(file, "1");
-        }
-    }
-
-    private void restore(String file, String value) {
-        if (file == null) {
-            return;
-        }
-        FileUtils.writeValue(file, value);
-    }
-
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_TAPTOWAKE_SWITCH, false);
-        restore(TapToWakeSwitch.getFile(), enabled);
 
-        VibratorStrengthPreference.restore(context);
-        S2SVibratorStrengthPreference.restore(context);
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.S2S_KEY, "0");
-        FileUtils.writeValue(DeviceSettings.FILE_S2S_TYPE, storedValue);
-        boolean btnSwapStoredValue = PreferenceManager.getDefaultSharedPreferences(context).getBoolean(DeviceSettings.BUTTONS_SWAP_KEY, false);
-        FileUtils.writeValue(DeviceSettings.BUTTONS_SWAP_PATH, btnSwapStoredValue ? "1" : "0");
-        DisplayCalibration.restore(context);
+        boolean isTapToWake = sharedPrefs.getBoolean(DeviceSettings.KEY_TAPTOWAKE_SWITCH, false);
+        boolean isSwapStore = sharedPrefs.getBoolean(DeviceSettings.BUTTONS_SWAP_KEY, false);
+        String S2SValue = sharedPrefs.getString(DeviceSettings.S2S_KEY, "0");
+        String VSValue = sharedPrefs.getString(DeviceSettings.KEY_VIBSTRENGTH, "2700"); 
+        String S2SVSValue = sharedPrefs.getString(DeviceSettings.KEY_S2S_VIBSTRENGTH, "20");
+
+        FileUtils.writeValue(TapToWakeSwitch.getFile(), isTapToWake);
+        FileUtils.writeValue(DeviceSettings.FILE_S2S_TYPE, S2SValue);
+        FileUtils.writeValue(DeviceSettings.BUTTONS_SWAP_PATH, isSwapStore);
+        FileUtils.writeValue(VibratorStrengthPreference.getFile(), VSValue);
+        FileUtils.writeValue(S2SVibratorStrengthPreference.getFile(), S2SVSValue);
+        DisplayCalibration.restore(context);        
     }
 }
