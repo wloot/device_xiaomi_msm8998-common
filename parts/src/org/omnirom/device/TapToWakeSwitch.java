@@ -32,14 +32,14 @@ public class TapToWakeSwitch implements OnPreferenceChangeListener {
     private static final String FILE = "/proc/touchpanel/double_tap_enable";
 
     public static String getFile() {
-        if (FileUtils.isFileWritable(FILE)) {
+        if (isSupported()) {
             return FILE;
         }
         return null;
     }
 
     public static boolean isSupported() {
-        return FileUtils.isFileWritable(getFile());
+        return FileUtils.isFileWritable(FILE);
     }
 
     public static boolean isCurrentlyEnabled(Context context) {

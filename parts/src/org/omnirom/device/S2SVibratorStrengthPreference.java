@@ -67,6 +67,13 @@ public class S2SVibratorStrengthPreference extends Preference implements
         mSeekBar.setOnSeekBarChangeListener(this);
     }
 
+    public static String getFile() {
+        if (isSupported()) {
+            return FILE_LEVEL;
+        }
+        return null;
+    }
+
     public static boolean isSupported() {
         return FileUtils.isFileWritable(FILE_LEVEL);
     }
@@ -80,15 +87,6 @@ public class S2SVibratorStrengthPreference extends Preference implements
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
         editor.putString(DeviceSettings.KEY_S2S_VIBSTRENGTH, newValue);
         editor.commit();
-    }
-
-    public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
-
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_S2S_VIBSTRENGTH, "20");
-        FileUtils.writeValue(FILE_LEVEL, storedValue);
     }
 
     public void onProgressChanged(SeekBar seekBar, int progress,
