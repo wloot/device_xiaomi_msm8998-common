@@ -17,8 +17,6 @@
     <string name="advanced_settings_summary">Erweitert</string>
     <string name="category_system">System</string>
     <string name="vib_strength_title_head">Vibrationsstärke</string>
-    <string name="taptowake_title">Tippen zum aufwecken - DoubleTap2Wake</string>
-    <string name="taptowake_summary">Doppel-klicke auf dem Display um das Gerät aufzuwecken</string>
 
     <string name="display_title">Display</string>
     <string name="device_doze_title">Inaktivitäts Display</string>
