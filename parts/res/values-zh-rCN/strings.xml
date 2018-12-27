@@ -27,12 +27,9 @@
     <!-- camera -->
     <string name="camera_title">相机</string>
     <string name="camera_hal3_title">启用 Camera2 API</string>
-    <string name="camera_hal3_summary">更改设置需重启生效，关闭此项可能会导致系统相机无法使用</string>
 
     <!-- s2s -->
     <string name="s2s_title">滑动休眠</string>
-    <string name="s2s_title_head">滑动手势休眠</string>
-    <string name="s2s_title_summary">在屏幕底部滑动手势休眠</string>
     <string name="s2s_vib_strength_title_head">滑动休眠振动强度</string>
 
     <!-- Kcal -->
