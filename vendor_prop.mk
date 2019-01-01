@@ -61,35 +61,40 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=1 \
-    persist.camera.set.afd=4 \
-    persist.camera.xm.green.b=0.96 \
-    persist.camera.xm.green.r=0.97 \
-    persist.dualcam.lpm.enable=1 \
-    vendor.camera.aux.packagelist=com.android.camera,org.lineageos.snap \
-    vidc.enc.dcvs.extra-buff-count=2
+	persist.camera.eis.enable=1 \
+	persist.camera.HAL3.enabled=1 \
+	persist.camera.set.afd=4 \
+	persist.camera.xm.green.b=0.96 \
+	persist.camera.xm.green.r=0.97 \
+	persist.dualcam.lpm.enable=1 \
+	vendor.camera.aux.packagelist=com.android.camera,com.google.android.GoogleCameraTele \
+	vidc.enc.dcvs.extra-buff-count=2
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1
+	persist.vendor.cne.feature=1
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.enable_hwc_vds=1 \
-    debug.sf.hw=1 \
-    debug.sf.latch_unsignaled=1 \
-    ro.opengles.version=196610 \
-    ro.sf.lcd_density=480 \
-    vendor.display.disable_rotator_downscale=1 \
-    vendor.display.disable_skip_validate=1 \
-    vendor.display.enable_default_color_mode=1 \
-    vendor.display.perf_hint_window=50 \
-    vendor.gralloc.enable_fb_ubwc=1
+	debug.gralloc.enable_fb_ubwc=1 \
+	debug.hwui.use_buffer_age=false \
+	debug.sf.enable_hwc_vds=1 \
+	debug.sf.early_phase_offset_ns=5000000 \
+	debug.sf.hw=1 \
+	debug.sf.latch_unsignaled=1 \
+	ro.opengles.version=196610 \
+	ro.sf.lcd_density=480 \
+	vendor.display.enable_default_color_mode=0 \
+	vendor.display.disable_partial_split=1 \
+	vendor.display.disable_skip_validate=1 \
+	vendor.display.rotator_downscale=1 \
+	vendor.display.perf_hint_window=50 \
+	vendor.gralloc.enable_fb_ubwc=1
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dpm.feature=1 \
-    persist.vendor.dpm.nsrm.bkg.evt=3955
+	persist.vendor.dpm.feature=1 \
+	persist.vendor.dpm.nsrm.bkg.evt=3955
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -103,12 +108,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Memory
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=256m \
-    dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.heapminfree=4m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heaptargetutilization=0.75
+	dalvik.vm.heapmaxfree=8m \
+	dalvik.vm.heapminfree=4m \
+	dalvik.vm.heapsize=512m \
+	dalvik.vm.heapstartsize=16m \
+	dalvik.vm.heaptargetutilization=0.75
+
+# Memory (CAF)
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.qti.sys.fw.bg_apps_limit=60 \
+	ro.vendor.qti.sys.fw.bservice_enable=true \
+	ro.vendor.qti.sys.fw.bservice_limit=5 \
+	ro.vendor.qti.sys.fw.bservice_age=5000
 
 # Network manager
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -124,10 +135,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.qti.core_ctl_max_cpu=4 \
-    ro.vendor.qti.core_ctl_min_cpu=0 \
-    ro.vendor.qti.sys.fw.bg_apps_limit=60
+	ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
