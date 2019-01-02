@@ -28,6 +28,7 @@
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.target.performance.rc
+import /vendor/etc/init/hw/init.sagit.rc
 
 import /init.spectrum.rc 
 
