@@ -51,8 +51,8 @@ public class IFAAManagerImpl extends IFAAManagerV3 {
         String str = "";
         JSONObject location = new JSONObject();
         JSONObject fullView = new JSONObject();
-        String str2 = SystemProperties.get("persist.sys.fp.fod.location.X_Y", "");
-        String str3 = SystemProperties.get("persist.sys.fp.fod.size.width_height", "");
+        String str2 = SystemProperties.get("persist.vendor.sys.fp.fod.location.X_Y", "");
+        String str3 = SystemProperties.get("persist.vendor.sys.fp.fod.size.width_height", "");
         try {
             if (validateVal(str2) && validateVal(str3)) {
                 String[] split = str2.split(seperate);
@@ -92,8 +92,8 @@ public class IFAAManagerImpl extends IFAAManagerV3 {
     }
 
     public int getSupportBIOTypes(Context context) {
-        int ifaaType = SystemProperties.getInt("persist.sys.ifaa", 0);
-        String fpVendor = SystemProperties.get("persist.sys.fp.vendor", "");
+        int ifaaType = SystemProperties.getInt("persist.vendor.sys.pay.ifaa", 0);
+        String fpVendor = SystemProperties.get("persist.vendor.sys.fp.vendor", "");
         int supportBIOTypes = "none".equalsIgnoreCase(fpVendor) ? ifaaType & IFAA_TYPE_IRIS :
                 ifaaType & (IFAA_TYPE_FINGER | IFAA_TYPE_IRIS);
         if ((supportBIOTypes & IFAA_TYPE_FINGER) == IFAA_TYPE_FINGER && sIsFod) {

@@ -566,12 +566,12 @@
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.mlipay</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IMlipayService</name>
             <instance>default</instance>
         </interface>
-    </hal>    
+    </hal>
     <sepolicy>
         <version>26.0</version>
     </sepolicy>

@@ -55,7 +55,6 @@ fi
 # Initialize the helper for common device
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ROM_ROOT" true "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/kanged-proprietary-files.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
@@ -93,8 +92,5 @@ CAMERA_MSM8998="$COMMON_BLOB_ROOT"/vendor/lib/hw/camera.msm8998.so
 MINIKIN_V27="$COMMON_BLOB_ROOT"/vendor/lib/libminikin-v27.so
 patchelf --replace-needed libminikin.so libminikin-v27.so "$CAMERA_MSM8998"
 patchelf --set-soname libminikin-v27.so "$MINIKIN_V27"
-
-patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/bin/mlipayd
-patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/lib64/libmlipay.so
 
 "$MY_DIR"/setup-makefiles.sh

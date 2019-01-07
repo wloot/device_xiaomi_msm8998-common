@@ -212,10 +212,6 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
     return sInstance;
 }
 
-void setFpVendorProp(const char *fp_vendor) {
-    property_set("persist.sys.fp.vendor", fp_vendor);
-}
-
 fingerprint_device_t* getDeviceForVendor(const char *class_name)
 {
     const hw_module_t *hw_module = nullptr;
@@ -260,6 +256,11 @@ fingerprint_device_t* getDeviceForVendor(const char *class_name)
     return fp_device;
 }
 
+void setFpVendorProp(const char *fp_vendor) {
+    property_set("persist.vendor.sys.fp.vendor", fp_vendor);
+    property_set("ro.boot.fpsensor", fp_vendor);
+}
+
 fingerprint_device_t* getFingerprintDevice()
 {
     fingerprint_device_t *fp_device;
@@ -281,6 +282,7 @@ fingerprint_device_t* getFingerprintDevice()
     }
 
     setFpVendorProp("none");
+
     return nullptr;
 }
 
