@@ -112,7 +112,7 @@ on charger
     setprop sys.usb.config adb
 
 on late-fs
-    # boot time fs tune
+    # Boot-time fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/nr_requests 256
     write /sys/block/sde/queue/iostats 0
