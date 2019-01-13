@@ -25,16 +25,6 @@
       ]
     },
     {
-      "Name": "CPUBWMinFreq",
-      "Path": "/sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/min_freq",
-      "Values": [
-        "3143",
-        "1525",
-        "762"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "PMQoSCpuDmaLatency",
       "Path": "/dev/cpu_dma_latency",
       "Values": [
