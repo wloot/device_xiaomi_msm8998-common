@@ -13,46 +13,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <resources>
-    <string name="app_name">Настройки Xiaomi</string>
-    <string name="advanced_settings">Настройки Xiaomi</string>
-    <string name="advanced_settings_summary">Дополнительные настройки</string>
-    <string name="category_system">Система</string>
-    <string name="vib_strength_title_head">Сила вибрации</string>
-
-    <string name="display_title">Экран</string>
-    <string name="device_doze_title">Автоматич. включение экрана</string>
-
-    <!-- camera -->
-    <string name="camera_title">Камера</string>
-    <string name="camera_hal3_title">Включить Camera2 API</string>
-
-    <!-- s2s -->
-    <string name="s2s_title">Жест для сна</string>
-    <string name="s2s_vib_strength_title_head">Сила вибрации жеста</string>
-
-    <!-- Kcal -->
-    <string name="kcal_title">Цвета экрана</string>
-    <string name="kcal_summary">Калибровка цветов экрана</string>
-    <string name="kcal_enabled_title">Включить калибровку</string>
-    <string name="kcal_enabled_summary">Включение калибровки цветов</string>
-    <string name="kcal_red">Красный</string>
-    <string name="kcal_green">Зелёный</string>
-    <string name="kcal_blue">Синий</string>
-    <string name="kcal_saturation">Насыщенность</string>
-    <string name="kcal_contrast">Контраст</string>
-    <string name="menu_reset">Сброс</string>
-    <string name="kcal_color_temp">Цветовая температура (K)</string>
-
-    <!-- Spectrum Profiles -->
-    <string name="spectrum_profile_title">Профили ядра</string>
-    <string name="spectrum_title">Профиль производительности</string>
-    <string name="spectrum_summary">Выберите профиль производительности ядра</string>
-    <string name="spectrum_dialogTitle">Выбор профиля ядра</string>
-
-    <!-- Swap HW buttons -->
-    <string name="hw_buttons_title">Аппаратные кнопки</string>
-    <string name="swap_hw_buttons_title">Поменять местами</string>
-    <string name="swap_hw_buttons_summary">Поменять местами кнопки «Обзор» и «Назад»</string>
+    <string name="app_name">Xiaomi</string>
+    <string name="advanced_settings">Настройки устройства</string>
+    <string name="vib_strength_title">Сила вибрации</string>
+    <string name="vib_strength_summary">Установить силу вибрации</string>
+    <string name="taptowake_title">Включение нажатием</string>
+    <string name="taptowake_summary">Дважды нажмите в любом месте экрана, чтобы включить устройство</string>
+    <string name="device_doze_title">Индикация событий</string>
+    <string name="device_doze_summary">Включение экрана при получении уведомлений</string>
 </resources>

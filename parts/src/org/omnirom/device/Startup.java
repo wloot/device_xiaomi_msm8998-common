@@ -21,30 +21,34 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.preference.PreferenceManager;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-import org.omnirom.device.R;
-import org.omnirom.device.utils.FileUtils;
-
 public class Startup extends BroadcastReceiver {
+
+    private void restore(String file, boolean enabled) {
+        if (file == null) {
+            return;
+        }
+        if (enabled) {
+            Utils.writeValue(file, "1");
+        }
+    }
+
+    private void restore(String file, String value) {
+        if (file == null) {
+            return;
+        }
+        Utils.writeValue(file, value);
+    }
 
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_TAPTOWAKE_SWITCH, false);
+        restore(TapToWakeSwitch.getFile(), enabled);
 
-        boolean isTapToWake = sharedPrefs.getBoolean(DeviceSettings.KEY_TAPTOWAKE_SWITCH, false);
-        boolean isSwapStore = sharedPrefs.getBoolean(DeviceSettings.BUTTONS_SWAP_KEY, false);
-        String S2SValue = sharedPrefs.getString(DeviceSettings.S2S_KEY, "0");
-        String VSValue = sharedPrefs.getString(DeviceSettings.KEY_VIBSTRENGTH, "2700"); 
-        String S2SVSValue = sharedPrefs.getString(DeviceSettings.KEY_S2S_VIBSTRENGTH, "20");
-
-        FileUtils.writeValue(TapToWakeSwitch.getFile(), isTapToWake);
-        FileUtils.writeValue(DeviceSettings.FILE_S2S_TYPE, S2SValue);
-        FileUtils.writeValue(DeviceSettings.BUTTONS_SWAP_PATH, isSwapStore);
-        FileUtils.writeValue(VibratorStrengthPreference.getFile(), VSValue);
-        FileUtils.writeValue(S2SVibratorStrengthPreference.getFile(), S2SVSValue);
-        DisplayCalibration.restore(context);        
+        VibratorStrengthPreference.restore(context);
     }
 }
