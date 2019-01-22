@@ -296,7 +296,6 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    init.spectrum.rc \
     init.target.rc \
     init.target.performance.rc \
     ueventd.qcom.rc
