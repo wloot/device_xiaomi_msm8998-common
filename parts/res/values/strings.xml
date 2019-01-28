@@ -14,12 +14,12 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">Xiaomi</string>
-    <string name="advanced_settings">Advanced</string>
-    <string name="vib_strength_title">Vibration strength</string>
-    <string name="vib_strength_summary">Define the strength of the vibrator</string>
-    <string name="taptowake_title">Tap to wake</string>
-    <string name="taptowake_summary">Double-tap anywhere on the screen to wake device</string>
-    <string name="device_doze_title">Ambient display</string>
-    <string name="device_doze_summary">Wake screeen when you receive notifications</string>
+    <string name="app_name">小米</string>
+    <string name="advanced_settings">高级设置</string>
+    <string name="vib_strength_title">调节振动强度</string>
+    <string name="vib_strength_summary">对振动强度进行调节</string>
+    <string name="taptowake_title">点击唤醒</string>
+    <string name="taptowake_summary">熄屏时双击屏幕上任意位置以唤醒设备</string>
+    <string name="device_doze_title">环境显示</string>
+    <string name="device_doze_summary">收到通知时唤醒屏幕</string>
 </resources>
