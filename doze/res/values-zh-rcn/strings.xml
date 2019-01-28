@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2016 The CyanogenMod Project
+               (C) 2017 The LineageOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_on">开启</string>
+
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_off">关闭</string>
+
+    <!-- Device specific settings -->
+    <string name="device_settings_app_name">高级设置</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_display_title">主动显示</string>
+
+    <!-- Tilt sensor -->
+    <string name="tilt_sensor_title">倾斜传感器</string>
+
+    <!-- Proximity sensor -->
+    <string name="proximity_sensor_title">距离传感器</string>
+
+    <!-- Hand wave gesture -->
+    <string name="hand_wave_gesture_title">手势</string>
+    <string name="hand_wave_gesture_summary">使用手势唤醒设备</string>
+
+    <!-- Pick-up gesture -->
+    <string name="pick_up_gesture_title">抬起唤醒</string>
+    <string name="pick_up_gesture_summary">抬起设备时会唤醒设备</string>
+
+    <!-- Pocket gesture -->
+    <string name="pocket_gesture_title">口袋模式</string>
+    <string name="离开口袋后会唤醒设备"></string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">接近唤醒/string>
+    <string name="proximity_wake_enable_summary">在手上时会唤醒设备</string>
+
+    <!-- Dialog texts -->
+    <string name="dialog_ok">确认</string>
+
+    <!-- Help texts -->
+    <string name="doze_settings_help_title">帮助</string>
+    <string name="doze_settings_help_text">这些特性使用传感器事件来启动息屏的设备。选择的传感器只有在设备收到通知时才启用，这有助于减少电池的使用。也有一个选项，使选定的传感器一旦屏幕关闭，这将导致更高的电池使用。</string>
+</resources>
