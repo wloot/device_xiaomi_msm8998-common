@@ -44,13 +44,13 @@
     <string name="离开口袋后会唤醒设备"></string>
 
     <!-- Proximity wake -->
-    <string name="proximity_wake_title">接近唤醒/string>
-    <string name="proximity_wake_enable_summary">在手上时会唤醒设备</string>
+    <string name="proximity_wake_title">手持唤醒/string>
+    <string name="proximity_wake_enable_summary">手持设备时会唤醒设备</string>
 
     <!-- Dialog texts -->
     <string name="dialog_ok">确认</string>
 
     <!-- Help texts -->
     <string name="doze_settings_help_title">帮助</string>
-    <string name="doze_settings_help_text">这些特性使用传感器事件来启动息屏的设备。选择的传感器只有在设备收到通知时才启用，这有助于减少电池的使用。也有一个选项，使选定的传感器一旦屏幕关闭，这将导致更高的电池使用。</string>
+    <string name="doze_settings_help_text">这些特性使用传感器事件来启动息屏的设备。选择的传感器只有在设备收到通知时才启用，这有助于减少电池的消费。但是某些选定的传感器,一旦屏幕关闭，会导致更高的电池消耗。</string>
 </resources>
