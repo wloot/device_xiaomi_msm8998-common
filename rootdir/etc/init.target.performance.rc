@@ -118,7 +118,7 @@ on late-fs
     write /sys/block/sde/queue/iostats 0
     write /sys/block/sde/queue/nr_requests 256
 
-    setprop sys.io.scheduler "bfq"
+    setprop sys.io.scheduler "cfq"
 
 on post-fs
     # Disable sched autogroup
